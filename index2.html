@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            flex-direction : column;
+            margin: 0;
+        }
+
+        body {
+            margin          : 0;
+            padding         : 0;
+            box-sizing      : border-box;
+            background-color: #2c2c2c;
+            color           : white;
+            display         : flex;
+            justify-content : center;
+            align-items     : center;
+            flex-direction  : column;
+            gap: 5em;
+        }
+
+        .junto {
+            display         : flex;
+            flex-direction  : column;
+            align-items     : center;
+            justify-content : center;
+            background-color: #72727256;
+            width           : 100%;
+            border-radius   : 1em;
+            box-shadow      : 0px 2px 5px #0000005d;
+            opacity         : 0.65;
+            transition      : .5s;
+            height          : 100vh;
+        }
+
+        .junto:hover {
+            opacity: 1;
+        }
+
+        .junto input {
+            width           : 10em;
+            height          : 2em;
+            border-radius   : 2em;
+            box-shadow: 0 0 5px #000000c9;
+            border          :none;
+            text-align      : center;
+            background-color: black;
+            color           : white;
+        }
+
+        .junto button {
+            height          : 30px;
+            margin-top      : 10px;
+            font-size       : 1em;
+            font-weight     : bold;
+            border          : none;
+            border-radius   : 1em;
+            color           : white;
+            background-color: #2c2c2c;
+            transition      : .5s;
+        }
+
+        .junto button:hover {
+            background-color: #575757;
+            box-shadow      : 0px 0px 5px #0000005d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Operações Matemáticas</h1>
+        <p>Aqui você pode escolher números e fazer as quatro operações da matemática!</p>
+    </header>
+    <div class="junto">
+        <h1>Somando números</h1>
+        <input type="number" name="txtn1" id="txtn1">
+        +
+        <input type="number" name="txtn2" id="txtn2">
+        <br>
+        <button onclick="somar()">Somar</button>
+        <p id="res1">Resultado:</p>
+    </div>
+
+    <div class="junto">
+        <h1>Subtraindo números</h1>
+        <input type="number" name="txtn3" id="txtn3">
+        -
+        <input type="number" name="txtn4" id="txtn4">
+        <br>
+        <button onclick="subtrair()">Subtrair</button>
+        <p id="res2">Resultado:</p>
+    </div>
+
+    <div class="junto">
+        <h1>Multiplicando números</h1>
+        <input type="number" name="txtn5" id="txtn5">
+        x
+        <input type="number" name="txtn6" id="txtn6">
+        <br>
+        <button onclick="multiplicar()">Multiplicar</button>
+        <p id="res3">Resultado:</p>
+    </div>
+
+    <div class="junto">
+        <h1>Dividindo números</h1>
+        <input type="number" name="txtn7" id="txtn7">
+        /
+        <input type="number" name="txtn8" id="txtn8">
+        <br>
+        <button onclick="dividir()">Dividir</button>
+        <p id="res4">Resultado:</p>
+    </div>
+
+    <script>
+        function somar() {
+            let tn1 = document.getElementById('txtn1');
+            let tn2 = document.getElementById('txtn2');
+            let res = document.getElementById('res1');
+            let n1  = Number(tn1.value);
+            let n2  = Number(tn2.value);
+            let s   = n1 + n2;
+            res.innerHTML = "Resultado: " + `A soma de ${n1} e ${n2} é igual a ${s}`;
+        }
+
+        function subtrair() {
+            let tn1 = document.getElementById('txtn3');
+            let tn2 = document.getElementById('txtn4');
+            let res = document.getElementById('res2');
+            let n1  = Number(tn1.value);
+            let n2  = Number(tn2.value);
+            let s   = n1 - n2;
+            res.innerHTML = "Resultado: " + `A subtração de ${n1} e ${n2} é igual a ${s}`;
+        }
+
+        function multiplicar() {
+            let tn1 = document.getElementById('txtn5');
+            let tn2 = document.getElementById('txtn6');
+            let res = document.getElementById('res3');
+            let n1  = Number(tn1.value);
+            let n2  = Number(tn2.value);
+            let s   = n1 * n2;
+            res.innerHTML = "Resultado: " + `A multiplicação de ${n1} e ${n2} é igual a ${s}`;
+        }
+
+        function dividir() {
+            let tn1 = document.getElementById('txtn7');
+            let tn2 = document.getElementById('txtn8');
+            let res = document.getElementById('res4');
+            let n1  = Number(tn1.value);
+            let n2  = Number(tn2.value);
+            let s   = n1 / n2;
+            res.innerHTML = "Resultado: " + `A divisão de ${n1} e ${n2} é igual a ${s}`;
+        }
+        
+    </script>
+</body>
+</html>
